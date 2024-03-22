@@ -24,5 +24,10 @@ public class RestaurantService {
 		List<RestaurantDTO>restaurantDTOList=restaurants.stream().map(restaurant->RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurant)).collect(Collectors.toList());
 		return restaurantDTOList;
 	}
+
+	public RestaurantDTO addRestaurentInDB(RestaurantDTO restaurantDTO) {
+	Restaurant saveRestaurant=restaurantRepo.save(RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO));
+		return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(saveRestaurant);
+	}
 	
 }
