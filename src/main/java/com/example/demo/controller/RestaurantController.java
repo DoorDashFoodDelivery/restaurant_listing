@@ -24,7 +24,6 @@ public class RestaurantController {
 	
 	@GetMapping("/fetchAllRestaurant")
 	public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurant(){
-		
 		List<RestaurantDTO> allRestaurants 	=restaurantService.findAllRestaurant();
 		return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
 		
