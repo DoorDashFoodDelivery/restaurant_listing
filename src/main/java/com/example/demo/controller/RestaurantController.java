@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +34,12 @@ public class RestaurantController {
 	public ResponseEntity<RestaurantDTO> saveRestaurant(@RequestBody RestaurantDTO restaurantDTO){
 		RestaurantDTO restaurantAdded=restaurantService.addRestaurentInDB(restaurantDTO);
 		return new ResponseEntity<>(restaurantAdded,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/fetchById/{id}")
+	public ResponseEntity<RestaurantDTO> findRestaurantById(@PathVariable Integer id){
+		return restaurantService.fetchRestaurentById(id);
+		
 	}
 	
 	
