@@ -1,4 +1,4 @@
-# Microservices Eureka Server with Restaurant Service
+# Microservices Eureka Server with Restaurant Service 🍽️
 
 This project is a demonstration of a microservices architecture utilizing Eureka Server for service discovery and registration. It includes services for managing restaurants, users, orders, and food items.
 
